@@ -4,6 +4,13 @@
 
   <description>Douglas DC-2</description>
   <author>Gijs de Rooy, Jentron</author>
+  <status>alpha</status>
+  <rating>
+   <FDM type="int">2</FDM>
+   <systems type="int">1</systems>
+   <cockpit type="int">0</cockpit>
+   <model type="int">3</model>
+  </rating>
 
   <flight-model>jsb</flight-model>
   <aero>dc2</aero>
