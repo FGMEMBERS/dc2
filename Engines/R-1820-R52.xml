@@ -9,7 +9,7 @@
 -->
 
 <piston_engine name="R-1820-R52">
-  <minmp unit="INHG">          6.0 </minmp>
+  <minmp unit="INHG">          9.8 </minmp>
   <maxmp unit="INHG">         37.0 </maxmp>
   <displacement unit="IN3"> 1820.0 </displacement>
   <!-- Defining <bsfc> over-rides the bsfc value calculated from <maxhp> -->
