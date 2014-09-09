@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+  File:     R-1820-R52.xml
+  Author:   Ron Jensen
+
+  References:
+     
+37.0    2350    875
+-->
+
+<piston_engine name="R-1820-R52">
+  <minmp unit="INHG">          9.8 </minmp>
+  <maxmp unit="INHG">         37.0 </maxmp>
+  <displacement unit="IN3"> 1820.0 </displacement>
+  <!-- Defining <bsfc> over-rides the bsfc value calculated from <maxhp> -->
+  <!--<bsfc>           0.45 </bsfc>-->
+  <maxhp>                   875.00 </maxhp>
+  <cycles>                    4.0  </cycles>
+  <cylinders>                 9.0  </cylinders>
+  <bore unit="IN">            6.125</bore>
+  <stroke unit="IN">          6.875</stroke>
+  <compression-ratio>         6.4  </compression-ratio>
+  <idlerpm>                 550.0  </idlerpm>
+  <maxrpm>                 2350.0  </maxrpm>
+  <maxthrottle>               1.0  </maxthrottle>
+  <minthrottle>               0.1  </minthrottle>
+  <sparkfaildrop>             0.1  </sparkfaildrop>
+
+
+<!-- Boost numbers estimated -->
+  <numboostspeeds>             1 </numboostspeeds>
+  <boostoverride>              0 </boostoverride>
+  <ratedboost1 unit="PSI">     3.5 </ratedboost1>
+  <ratedpower1 unit="HP">   1200 </ratedpower1>
+  <ratedrpm1>               2350 </ratedrpm1>
+  <ratedaltitude1>             0 </ratedaltitude1>
+<!--  <takeoffboost>   0</takeoffboost> -->
+
+</piston_engine>

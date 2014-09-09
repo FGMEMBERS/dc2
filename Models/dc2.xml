@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+<path>dc2.ac</path>
+
+<nasal>
+ <load>
+   var livery_update = aircraft.livery_update.new("Aircraft/dc2/Models/Liveries", 10);
+ </load>
+ <unload>
+   livery_update.stop();
+ </unload>
+</nasal>
+
+<model>
+ <path>Aircraft/dc2/Models/Lights/beacon.xml</path>
+ <offsets>
+  <x-m> 2.684 </x-m>
+  <y-m> 0.000 </y-m>
+  <z-m> 1.090 </z-m>
+ </offsets>
+</model>
+
+<model>
+ <name>flag</name>
+ <path>Aircraft/dc2/Models/flag.ac</path>
+ <offsets>
+  <x-m> -7.380 </x-m>
+  <y-m>  0.696 </y-m>
+  <z-m>  0.597 </z-m>
+  <roll-deg> -10 </roll-deg>
+ </offsets>
+</model>
+
+<animation>
+ <type>select</type>
+ <object-name>flag</object-name>
+ <condition>
+  <property>/controls/flag-visible</property>
+ </condition>
+</animation>
+
+<!-- AILERON LEFT -->
+
+<animation>
+ <type>rotate</type>
+ <object-name>aileronl</object-name>
+ <property>surface-positions/left-aileron-pos-norm</property>
+ <factor>-30</factor>
+ <axis>
+  <x1-m> -1.308</x1-m>
+  <y1-m> -6.200</y1-m>
+  <z1-m> -0.647</z1-m>
+  <x2-m> -0.919</x2-m>
+  <y2-m>-12.200</y2-m>
+  <z2-m> -0.118</z2-m>
+ </axis>
+</animation>
+
+<!-- AILERON RIGHT -->
+
+<animation>
+ <type>rotate</type>
+ <object-name>aileronr</object-name>
+ <property>surface-positions/right-aileron-pos-norm</property>
+ <factor>-30</factor>
+ <axis>
+  <x1-m> -1.308</x1-m>
+  <y1-m>  6.200</y1-m>
+  <z1-m> -0.647</z1-m>
+  <x2-m> -0.919</x2-m>
+  <y2-m> 12.200</y2-m>
+  <z2-m> -0.118</z2-m>
+ </axis>
+</animation>
+
+<!-- ELEVATOR LEFT -->
+
+<animation>
+ <type>rotate</type>
+ <object-name>elevatorl</object-name>
+ <property>surface-positions/elevator-pos-norm</property>
+ <factor>-25</factor>
+ <axis>
+  <x1-m> 8.439</x1-m>
+  <y1-m>-0.488</y1-m>
+  <z1-m> 0.296</z1-m>
+  <x2-m> 8.439</x2-m>
+  <y2-m>-3.177</y2-m>
+  <z2-m> 0.545</z2-m>
+ </axis>
+</animation>
+
+<!-- ELEVATOR RIGHT -->
+
+<animation>
+ <type>rotate</type>
+ <object-name>elevatorr</object-name>
+ <property>surface-positions/elevator-pos-norm</property>
+ <factor>25</factor>
+ <axis>
+  <x1-m> 8.439</x1-m>
+  <y1-m> 0.488</y1-m>
+  <z1-m> 0.296</z1-m>
+  <x2-m> 8.439</x2-m>
+  <y2-m> 3.177</y2-m>
+  <z2-m> 0.545</z2-m>
+ </axis>
+</animation>
+
+<!-- ENGINE LEFT  -->
+
+<model>
+ <path>Aircraft/dc2/Models/Engines/engine.xml</path>
+ <offsets>
+  <x-m> -6.269 </x-m>
+  <y-m> -2.453 </y-m>
+  <z-m> -1.021 </z-m>
+  <pitch-deg>2</pitch-deg>
+ </offsets>
+</model>
+
+<model>
+ <name>engine_smoke_l</name>
+ <path>Aircraft/dc2/Models/smoke.xml</path>
+ <condition>
+  <equals>
+   <property>/engines/engine[0]/cranking</property>
+   <value>1</value>
+  </equals>
+ </condition>
+ <offsets>
+  <x-m>-5.341</x-m>
+  <y-m>-3.005</y-m>
+  <z-m>-1.349</z-m>
+ </offsets>
+</model>
+
+<!-- ENGINE RIGHT  -->
+
+<model>
+ <path>Aircraft/dc2/Models/Engines/engine.xml</path>
+ <offsets>
+  <x-m> -6.269 </x-m>
+  <y-m>  2.453 </y-m>
+  <z-m> -1.021 </z-m>
+  <pitch-deg>2</pitch-deg>
+ </offsets>
+</model>
+
+<model>
+ <name>engine_smoke_r</name>
+ <path>Aircraft/dc2/Models/smoke.xml</path>
+ <condition>
+  <equals>
+   <property>/engines/engine[1]/cranking</property>
+   <value>1</value>
+  </equals>
+ </condition>
+ <offsets>
+  <x-m>-5.341</x-m>
+  <y-m> 3.005</y-m>
+  <z-m>-1.349</z-m>
+ </offsets>
+</model>
+
+<!-- FLAP LEFT OUTER -->
+
+<animation>
+ <type>rotate</type>
+ <object-name>flaplo</object-name>
+ <property>surface-positions/flap-pos-norm</property>
+ <factor>-45</factor>
+ <axis>
+  <x1-m> -0.810</x1-m>
+  <y1-m> -3.441</y1-m>
+  <z1-m> -0.906</z1-m>
+  <x2-m> -0.810</x2-m>
+  <y2-m> -6.200</y2-m>
+  <z2-m> -0.663</z2-m>
+ </axis>
+</animation>
+
+<!-- GEAR LEFT -->
+
+<animation>
+ <type>translate</type>
+ <object-name>gearwheell</object-name>
+ <object-name>gearstrutlowerl</object-name>
+ <object-name>gearstrutupperl</object-name>
+ <property>gear/gear[0]/compression-ft</property>
+ <factor>0.33</factor>
+ <axis>
+  <x>0</x>
+  <y>0</y>
+  <z>1</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>geararml</object-name>
+ <property>gear/gear[0]/compression-ft</property>
+ <factor>8</factor>
+ <center>
+  <x-m>-2.416</x-m>
+  <y-m>-2.453</y-m>
+  <z-m>-1.190</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>geararml</object-name>
+ <object-name>gearwheell</object-name>
+ <object-name>gearstrutlowerl</object-name>
+ <property>gear/gear[0]/position-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>40.0</dep>
+  </entry>
+  <entry>
+   <ind>1</ind>
+   <dep>0.0</dep>
+  </entry>
+ </interpolation>
+ <center>
+  <x-m>-2.416</x-m>
+  <y-m>-2.453</y-m>
+  <z-m>-1.190</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>gearstrutlowerl</object-name>
+ <property>gear/gear[0]/position-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>-120.0</dep>
+  </entry>
+  <entry>
+   <ind>1</ind>
+   <dep>0.0</dep>
+  </entry>
+ </interpolation>
+ <center>
+  <x-m>-4.002</x-m>
+  <y-m>-2.453</y-m>
+  <z-m>-2.708</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>gearstrutupperl</object-name>
+ <property>gear/gear[0]/position-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>60.0</dep>
+  </entry>
+  <entry>
+   <ind>1</ind>
+   <dep>0.0</dep>
+  </entry>
+ </interpolation>
+ <center>
+  <x-m>-4.002</x-m>
+  <y-m>-2.453</y-m>
+  <z-m>-0.289</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>spin</type>
+ <object-name>gearwheell</object-name>
+ <property>gear/gear[0]/rollspeed-ms</property>
+ <factor>-3.142</factor>
+ <axis>
+  <x>0</x>
+  <y>1</y>
+  <z>0</z>
+ </axis>
+ <center>
+  <x-m>-4.002</x-m>
+  <y-m>-2.453</y-m>
+  <z-m>-2.708</z-m>
+ </center>
+</animation>
+
+<!-- GEAR RIGHT -->
+
+<!-- RUDDER -->
+
+<animation>
+ <type>rotate</type>
+ <object-name>rudder</object-name>
+ <property>surface-positions/rudder-pos-norm</property>
+ <factor>35</factor>
+ <axis>
+  <x1-m> 7.875 </x1-m>
+  <y1-m> 0.000 </y1-m>
+  <z1-m> 0.780 </z1-m>
+  <x2-m> 7.695 </x2-m>
+  <y2-m> 0.000 </y2-m>
+  <z2-m> 2.567 </z2-m>
+ </axis>
+</animation>
+
+</PropertyList>
+
